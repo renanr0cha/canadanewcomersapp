@@ -1,9 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home as HomeIcon, List, Plus, User } from 'lucide-react-native';
+import { Home as HomeIcon, List, Plus } from 'lucide-react-native';
 
 import Home from '../screens/Home';
 import NewDeposit from '../screens/NewDeposit';
-import Profile from '../screens/Profile';
 import TransactionFeed from '../screens/TransactionFeed';
 
 const Tab = createBottomTabNavigator();
@@ -26,11 +25,7 @@ export default function TabRoutes() {
           iconName = focused
             ? <List color='#11455B' />
             : <List color='#47515551' />
-        } else if (route.name === 'Profile') {
-          iconName = focused
-            ? <User color='#11455B' />
-            : <User color='#47515551' />
-        }
+        } 
         return iconName;
       },
       tabBarActiveTintColor: '#11455B',
@@ -55,13 +50,6 @@ export default function TabRoutes() {
         component={NewDeposit}
         options={{
           tabBarLabel: 'Adicionar crédito',
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarLabel: 'Seu Perfil',
         }}
       />
     </Tab.Navigator>
