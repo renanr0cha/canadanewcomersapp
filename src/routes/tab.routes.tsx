@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home as HomeIcon, List, Plus } from 'lucide-react-native';
+import { Home as HomeIcon, List, Plus } from '@tamagui/lucide-icons';
 
+import { useColorScheme } from 'react-native';
 import Home from '../screens/Home';
 import NewDeposit from '../screens/NewDeposit';
 import TransactionFeed from '../screens/TransactionFeed';
@@ -8,28 +9,33 @@ import TransactionFeed from '../screens/TransactionFeed';
 const Tab = createBottomTabNavigator();
 
 export default function TabRoutes() {
+  const colorScheme = useColorScheme()
+
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
       headerShown: false,
+      tabBarStyle: {
+        backgroundColor: colorScheme === 'dark' ? '#10171F' : '#FBFDFF',
+      },
       tabBarIcon: ({ focused }) => {
         let iconName;
         if (route.name === 'Home') {
           iconName = focused
-            ? <HomeIcon color='#11455B' />
-            : <HomeIcon color='#47515551' />
+            ? <HomeIcon color="$blue10" />
+            : <HomeIcon color="$blue8" />
         } else if (route.name === 'NewDeposit') {
           iconName = focused
-            ? <Plus color='#11455B' />
-            : <Plus color='#47515551' />
+            ? <Plus color="$blue10" />
+            : <Plus color="$blue8" />
         } else if (route.name === 'TransactionFeed') {
           iconName = focused
-            ? <List color='#11455B' />
-            : <List color='#47515551' />
+            ? <List color="$blue10" />
+            : <List color="$blue8" />
         } 
         return iconName;
       },
-      tabBarActiveTintColor: '#11455B',
-      tabBarInactiveTintColor: '#47515551',
+      tabBarActiveTintColor: colorScheme === 'dark' ? '#FBFDFF' : '#10171F',
+      tabBarInactiveTintColor: colorScheme === 'dark' ? '#FBFDFF' : '#10171F',
     })}>
       <Tab.Screen
         name="Home"

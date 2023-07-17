@@ -1,20 +1,51 @@
-import { Plus } from 'lucide-react-native';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Plus } from '@tamagui/lucide-icons';
+import { StyleSheet } from 'react-native';
+import { Button, Text, XStack, YStack } from 'tamagui';
 
 export default function Home() {
   return (
-    <View style={styles.container}>
-      <View style={styles.balanceContainer}>
-        <Text style={styles.balanceLabel}>Seu saldo é</Text>
-        <Text style={styles.balanceValue}>R$ 129.22</Text>
-      </View>
-      <View style={styles.buttonsContainer}>
-        <View style={styles.addBalanceButton}>
-          <Plus color="#007AFF" size={24} />
-          <Button title="Adicionar saldo" onPress={() => {}} />
-        </View>
-      </View>
-    </View>
+    <YStack
+      flex={1}
+      fullscreen
+      backgroundColor={"$blue1"}
+      height={"100%"}
+    >
+      <YStack
+        width="100%"
+        paddingLeft={16}
+        paddingTop={40}
+        backgroundColor={"$blue1"}
+      >
+        <Text
+          fontSize={14}
+          color="$blue11"
+        >
+          Seu saldo é
+        </Text>
+        <Text
+          fontSize="$10"
+          fontWeight="800"
+          color="$blue11"
+        >
+          R$ 129.22
+        </Text>
+      </YStack>
+      <XStack 
+        padding={16}
+        backgroundColor={"$blue1"}
+        w={"100%"}
+      >
+          <Button
+            size="$5"
+            icon={<Plus size={20} color='$blue10'/>}
+            backgroundColor="$blue4"
+            color={"$blue10"}
+            onPress={() => {}}
+          >
+              Adicionar saldo
+          </Button>
+      </XStack>
+    </YStack>
   );
 }
 
@@ -24,7 +55,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    fontFamily: 'Barlow400Regular',
   },
   boxContainer: {
     flexDirection: 'row',
@@ -53,11 +83,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 20,
   },
-  addBalanceButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    
-  }
 
 });
