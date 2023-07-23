@@ -1,6 +1,6 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import { Home, User } from 'lucide-react-native';
+import { Home, User } from '@tamagui/lucide-icons';
 import { useColorScheme } from 'react-native';
 import Profile from '../screens/Profile';
 import TabRoutes from './tab.routes';
@@ -17,6 +17,11 @@ export default function DrawerRoutes() {
         backgroundColor: colorScheme === 'dark' ? '#10171F' : '#FBFDFF',
         borderBottomColor: colorScheme === 'dark' ? '#10171F' : '#FBFDFF',
       },
+      drawerStyle: {
+        backgroundColor: colorScheme === 'dark' ? '#10171F' : '#FBFDFF',
+      },
+      drawerActiveTintColor: colorScheme === 'dark' ? '#FBFDFF' : '#10171F',
+      drawerInactiveTintColor: colorScheme === 'dark' ? '#FBFDFF' : '#10171F',
       headerTitle: '',
     })}>
       <Drawer.Screen
@@ -27,8 +32,8 @@ export default function DrawerRoutes() {
           drawerIcon: ({ focused }) => {
             let iconName;
             iconName = focused
-              ? <Home color='#11455B' />
-              : <Home color='#47515551' />
+              ? <Home color='$blue10' />
+              : <Home color='$blue8' />
             return iconName;
           }
         }}
@@ -41,8 +46,8 @@ export default function DrawerRoutes() {
           drawerIcon: ({ focused }) => {
             let iconName;
             iconName = focused
-              ? <User color='#11455B' />
-              : <User color='#47515551' />
+              ? <User color='$blue10' />
+              : <User color='$blue8' />
             return iconName;
           }
         }}
