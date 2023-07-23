@@ -18,14 +18,14 @@ export default function Home() {
       >
         <Text
           fontSize={14}
-          color="$blue11"
+          color="$gray11"
         >
           Seu saldo é
         </Text>
         <Text
           fontSize="$10"
           fontWeight="800"
-          color="$blue11"
+          color="$gray12"
         >
           R$ 129.22
         </Text>
@@ -37,12 +37,12 @@ export default function Home() {
       >
           <Button
             size="$5"
-            icon={<Plus size={20} color='$blue10'/>}
-            backgroundColor="$blue4"
-            color={"$blue10"}
+            icon={<Plus size={20} color={'$green10'}/>}
+            backgroundColor="$green4"
+            color={"$green10"}
             onPress={() => {}}
           >
-              Adicionar saldo
+            Adicionar saldo
           </Button>
       </XStack>
     </YStack>

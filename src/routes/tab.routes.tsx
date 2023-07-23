@@ -55,7 +55,7 @@ export default function TabRoutes() {
         name="NewDeposit"
         component={NewDeposit}
         options={{
-          tabBarLabel: 'Adicionar crédito',
+          tabBarLabel: 'Adicionar saldo',
         }}
       />
     </Tab.Navigator>

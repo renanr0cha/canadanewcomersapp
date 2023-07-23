@@ -13,22 +13,24 @@ export default function TransactionFeed() {
   ];
 
   return (
-    <ScrollView backgroundColor="$blue1">
-      <YStack backgroundColor="$blue1">
-        <ListItem>
-          <TransactionCard title="adicionou" value=" R$100,00" typeOfTransaction="de crédito" transactionDate={dates[0]} />
-        </ListItem>
-        <ListItem>
-          <TransactionCard title="usou" value=" R$24,00" typeOfTransaction="em compra" transactionDate={dates[1]} />
-        </ListItem>
-        <ListItem>
-          <TransactionCard title="adicionou" value=" R$50,00" typeOfTransaction="de crédito" transactionDate={dates[2]} />
-        </ListItem>
-        <ListItem>
-          <TransactionCard title="usou" value=" R$6,00" typeOfTransaction="em compra" transactionDate={dates[3]} />
-        </ListItem>
-      </YStack>
-    </ScrollView>
+    <>
+      <ScrollView backgroundColor="$blue1">
+        <YStack backgroundColor="$blue1">
+          <ListItem>
+            <TransactionCard title="adicionou" value=" R$100,00" typeOfTransaction="de crédito" transactionDate={dates[0]}/>
+          </ListItem>
+          <ListItem>
+            <TransactionCard title="usou" value=" R$24,00" typeOfTransaction="em compra" transactionDate={dates[1]}/>
+          </ListItem>
+          <ListItem>
+            <TransactionCard title="adicionou" value=" R$50,00" typeOfTransaction="de crédito" transactionDate={dates[2]}/>
+          </ListItem>
+          <ListItem>
+            <TransactionCard title="usou" value=" R$6,00" typeOfTransaction="em compra" transactionDate={dates[3]}/>
+          </ListItem>
+        </YStack>
+      </ScrollView>
+    </>
   );
 }
 
